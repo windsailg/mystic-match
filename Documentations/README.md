@@ -16,4 +16,5 @@
 - AI
 - Design
 - DB / Data Sets
-- Service Stack
+- Service Stack 
+  - [AWS EC2](./aws_ec2.md)
