@@ -4,7 +4,8 @@
 
 - 目前已上線的 EC2 規格
   ![EC2 規格](./images/AWS_EC2_Spec.png)
-
+- 目前的機器其實空間不大，我們先用，必要時需要加大加強時，我們再討論
+  ![資源實在不大...](./images/AWS_EC2_Spec_01.png)
 - ssh 登入 EC2 的操作，需要一組 .pem，但這個 .pem 不適合上傳到 github 上來，所以有需要想測試的伙伴再請找 Neil
 
 ## 如何登入?
@@ -13,7 +14,12 @@
 1. 執行下列的命令，就可以登入
 
 ```shell
-$ ssh -i .ssh/keys/mystic-match.pem ubuntu@ec2-13-231-145-163.ap-northeast-1.compute.amazonaws.com
+$ ssh -i .ssh/keys/mystic-match.pem ubuntu@ec2-35-79-4-126.ap-northeast-1.compute.amazonaws.com
+
+// or
+
+$ ssh -i .ssh/keys/mystic-match.pem ubuntu@35.79.4.126
+
 // or
 $ ssh -i .ssh/keys/mystic-match.pem ubuntu@mystic-match.publicvm.com
 ```
