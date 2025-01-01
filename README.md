@@ -1,7 +1,7 @@
 
-<img src="public/images/banner-gh.png" />
+<img src="public/images/banner.jpg" />
 
-# Nuxt PWA
+# Mystic Match - Nuxt PWA
 
 [![Generic badge](https://img.shields.io/badge/Nuxt-3.0.0-<COLOR>.svg)](https://shields.io/)
 [![Generic badge](https://img.shields.io/badge/Tailwind-6.1.3-38bdf8.svg)](https://shields.io/)
