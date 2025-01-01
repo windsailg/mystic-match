@@ -1,5 +1,5 @@
 
-<img src="public/images/banner.jpg" />
+<img src="public/images/main-banner.jpg" />
 
 # Mystic Match - Nuxt PWA
 
