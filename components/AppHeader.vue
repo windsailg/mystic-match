@@ -3,13 +3,13 @@
       <nav class="max-w-7xl mx-auto flex p-5 justify-between">
         <div class="flex">
           <NuxtLink to="/">
-            <img src="/logo.png" alt="" class="w-10 h-10">
+            <img src="/logo.png">
           </NuxtLink>
           
-          <ul class="hidden lg:flex space-x-5 items-center pl-5 ">
-            <li><NuxtLink class="hover:text-white" to="/about">About this app</NuxtLink></li>
-  <!--           <li><NuxtLink to="/blog">Blog</NuxtLink></li> -->
-          </ul>
+          <!-- <ul class="hidden lg:flex space-x-5 items-center pl-5 ">
+            <li><NuxtLink class="hover:text-white" to="/about"></NuxtLink></li>
+              <li><NuxtLink to="/blog">Blog</NuxtLink></li>
+          </ul> -->
         </div>
         <Switch class="hidden lg:flex"/>
         <!-- Burger icon -->
