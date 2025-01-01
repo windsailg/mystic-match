@@ -6,10 +6,6 @@
             <img src="/logo.png">
           </NuxtLink>
           
-          <!-- <ul class="hidden lg:flex space-x-5 items-center pl-5 ">
-            <li><NuxtLink class="hover:text-white" to="/about"></NuxtLink></li>
-              <li><NuxtLink to="/blog">Blog</NuxtLink></li>
-          </ul> -->
         </div>
         <Switch class="hidden lg:flex"/>
         <!-- Burger icon -->
