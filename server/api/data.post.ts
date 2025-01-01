@@ -1,8 +1,5 @@
-import { sendError } from 'h3'
-import axios from 'axios'
-import { readConfig } from 'browserslist'
 export default defineEventHandler(async event => {
-  const config = useRuntimeConfig()
+  // const config = useRuntimeConfig()
   // Image 資料可以存到 public 資料夾，並直接使用路徑即可　不需要額外資料庫
   // EX: public/images/main-banner.jpg
   const data = {
