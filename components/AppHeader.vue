@@ -3,7 +3,7 @@
       <nav class="max-w-7xl mx-auto flex p-5 justify-between">
         <div class="flex">
           <NuxtLink to="/">
-            <img src="/logo.png">
+            <img src="/logo.png" class="w-30 h-8">
           </NuxtLink>
           
         </div>

@@ -40,10 +40,8 @@ onMounted(async () => {})
     <section
       class="flex mt-20 py-10 max-w-7xl mx-auto p-5 justify-center items-center"
     >
-      <div>
-        <span class="flex text-xl md:text-3xl justify-center">
-          Welcome to
-        </span>
+      <div class="justify-center">
+
         <h1 class="flex text-4xl md:text-7xl font-sfbold justify-center">
           Mystic Match
         </h1>
@@ -53,6 +51,10 @@ onMounted(async () => {})
         <h3 class="flex text-xl justify-center">
           ✨ AI 虛 擬 穿 搭 服 務
         </h3>
+        <span class="flex text-lg my-4 justify-center">
+          
+          點選發送使用者參數，讓 AI 推薦你最適合的穿著
+        </span>
         <div class="flex justify-center my-4">
           <v-btn
             class="m-2"
@@ -60,7 +62,7 @@ onMounted(async () => {})
             variant="outlined"
             @click="postData"
           >
-            發送使用者數據
+            發送使用者參數
           </v-btn>
         </div>
         <h5 class="my-4">
