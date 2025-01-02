@@ -1,6 +1,6 @@
 <template>
   <footer
-    class="w-full fixed bottom-0 border-t border-1 border-dashed p-5 dark:border-gray-600"
+    class="w-full fixed bottom-0 border-t border-1 border-dashed p-3 dark:border-gray-600 backdrop-blur-sm"
   >
     <div class="flex max-w-7xl mx-auto justify-between items-center">
       <p>© SINCE 2024</p>
