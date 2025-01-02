@@ -22,3 +22,4 @@ export default defineEventHandler(async event => {
     result: data
   }
 })
+// test...
