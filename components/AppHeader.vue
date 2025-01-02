@@ -7,12 +7,7 @@
           </NuxtLink>
           
         </div>
-        <Switch class="hidden lg:flex"/>
-        <!-- Burger icon -->
-        <NuxtLink @click="toggleMobileMenu()" class="flex lg:hidden hover:cursor-pointer">
-          <Icon name="mingcute:menu-line" class="text-gray-200 w-6 h-6 m-2" />
-        </NuxtLink>
-
+        <Switch class="flex"/>
       </nav>
 
       <MobileMenu class="hidden mobile-menu" />
