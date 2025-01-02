@@ -3,6 +3,7 @@
       <nav class="max-w-7xl mx-auto flex p-5 justify-between">
         <div class="flex">
           <NuxtLink to="/">
+<<<<<<< HEAD
             <img src="/logo.png" alt="" class="w-10 h-10">
           </NuxtLink>
           
@@ -10,6 +11,11 @@
             <li><NuxtLink class="hover:text-white" to="/about">About this app</NuxtLink></li>
   <!--           <li><NuxtLink to="/blog">Blog</NuxtLink></li> -->
           </ul>
+=======
+            <img src="/logo.png">
+          </NuxtLink>
+          
+>>>>>>> 8ca2512 (mv all dev to web_src/)
         </div>
         <Switch class="hidden lg:flex"/>
         <!-- Burger icon -->
