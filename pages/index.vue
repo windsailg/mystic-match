@@ -8,16 +8,23 @@ const data = reactive({
   },
   isFetch: false,
   isProcessing: false,
+  userInput: {
+    fit: 1,
+    style: 1,
+    type: 1,
+    color: 3,
+    height: 170,
+    weight: 60,
+  },
 })
-const { content, responseData, isFetch, isProcessing } = toRefs(data)
+const { content, responseData, isFetch, isProcessing, userInput } = toRefs(data)
 
 const methods = {
   postData: async () => {
     isProcessing.value = true
     try {
-      const data = {
-        content: 'something',
-      }
+      // 將使用者數據包成請求送入後端
+      const data = userInput.value
       const options = {
         method: 'POST',
         body: data,
@@ -46,10 +53,14 @@ onMounted(async () => {})
       class="flex mt-20 py-10 max-w-7xl mx-auto p-5 justify-center items-center"
     >
       <div class="justify-center">
-        <h2 class="flex text-4xl md:text-5xl font-sfbold text-center justify-center text-sky-950">
+        <h2
+          class="flex text-4xl md:text-5xl font-sfbold text-center justify-center text-sky-950"
+        >
           Welcome to Mystic Match
         </h2>
-        <h2 class="flex text-xl md:text-2xl justify-center text-center m-2 text-sky-950">
+        <h2
+          class="flex text-xl md:text-2xl justify-center text-center m-2 text-sky-950"
+        >
           Artifical Intellgence Virtual Styling Service
         </h2>
         <h3 class="flex text-xl text-center justify-center text-sky-950">
@@ -58,9 +69,13 @@ onMounted(async () => {})
         <span class="flex text-lg my-4 text-center justify-center text-sky-950">
           點選發送使用者參數，讓 AI 推薦你最適合的穿著
         </span>
+        <div v-show="false" class="flex justify-center my-4">
+          <!-- 設定使用者數據 -->
+          <!-- <v-text-field></v-text-field> -->
+        </div>
         <div class="flex justify-center my-4">
           <v-btn
-            class="m-2 rounded-lg green--text lighten-2 "
+            class="m-2 rounded-lg green--text lighten-2"
             color="secondary"
             elevation="0"
             size="x-large"
