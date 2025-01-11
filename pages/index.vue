@@ -13,8 +13,8 @@ const data = reactive({
     style: 1,
     type: 1,
     color: 3,
-    height: 170,
-    weight: 60,
+    // height: 170,
+    // weight: 60,
   },
   fitList: [
     { title: '合身', value: 1 },
@@ -61,7 +61,7 @@ const methods = {
       const data = userInput.value
       const options = {
         method: 'POST',
-        body: data,
+        body: JSON.stringify(data),
       }
       const res = await fetch('/api/data', options)
       const response = await res.json()
@@ -82,7 +82,7 @@ onMounted(async () => {})
 </script>
 
 <template>
-  <div class="flex mt-20 py-10 mx-auto p-2 justify-center items-center w-100">
+  <div class="flex mt-20 py-10 mx-auto p-2 justify-center items-center w-2/3">
     <div class="w-100">
       <h2
         class="flex text-4xl md:text-5xl font-sfbold text-center justify-center text-sky-950"
@@ -104,14 +104,15 @@ onMounted(async () => {})
         <!-- 設定使用者數據 -->
         <!-- <v-text-field></v-text-field> -->
       </div>
-      <v-row class="justify-center text-center py-8">
+      <v-row class="justify-center text-center pt-8 pb-6">
         <div class="mx-4 sm:w-screen md:w-2/3 lg:w-1/2">
-          <v-stepper :items="['Step 1', 'Step 2', 'Step 3']">
+          <v-stepper :items="['Step 1', 'Step 2', 'Step 3', 'Step 4']">
             <v-stepper-header></v-stepper-header>
+
             <template #[`item.1`]>
               <v-card title="選擇喜好版型" flat>
                 <v-select
-                  v-model="userInput.fitList"
+                  v-model="userInput.fit"
                   :items="fitList"
                   item-title="title"
                   item-value="value"
@@ -125,11 +126,50 @@ onMounted(async () => {})
             </template>
 
             <template #[`item.2`]>
-              <v-card title="Step Two" flat>...</v-card>
+              <v-card title="選擇喜好風格" flat>
+                <v-select
+                  v-model="userInput.style"
+                  :items="styleList"
+                  item-title="title"
+                  item-value="value"
+                  label="選擇喜歡的風格"
+                  persistent-hint
+                  variant="outlined"
+                  return-value
+                  single-line
+                ></v-select>
+              </v-card>
             </template>
 
             <template #[`item.3`]>
-              <v-card title="Step Three" flat>
+              <v-card title="選擇穿著場域" flat>
+                <v-select
+                  v-model="userInput.type"
+                  :items="typeList"
+                  item-title="title"
+                  item-value="value"
+                  label="選擇穿著場域"
+                  persistent-hint
+                  variant="outlined"
+                  return-value
+                  single-line
+                ></v-select>
+              </v-card>
+            </template>
+
+            <template #[`item.4`]>
+              <v-card title="選擇喜好色彩" flat>
+                <v-select
+                  v-model="userInput.color"
+                  :items="colorList"
+                  item-title="title"
+                  item-value="value"
+                  label="選擇喜歡的色彩"
+                  persistent-hint
+                  variant="outlined"
+                  return-value
+                  single-line
+                ></v-select>
                 <v-btn
                   class="m-2 rounded-lg green--text lighten-2"
                   color="secondary"
@@ -144,33 +184,44 @@ onMounted(async () => {})
                 </v-btn>
               </v-card>
             </template>
+
+            <!-- <v-stepper-actions
+              :disabled="disabled"
+              @click:next="下一步"
+              @click:prev="上一步"
+            ></v-stepper-actions> -->
+
           </v-stepper>
         </div>
       </v-row>
-
-      <h5 class="my-4">
-        <v-card v-show="isFetch">
-          <v-card-text>
-            <v-list v-if="!isFetch"></v-list>
-            <v-list v-else>
-              <v-list-item class="text-title my-4" max-width="600">
-                {{ responseData.comments }}
-              </v-list-item>
-              <v-list-item>
-                <v-img max-width="600" :src="responseData.mainRecommand" />
-              </v-list-item>
-              <v-list-item v-for="img in responseData.recommandList" :key="img">
-                <v-img max-width="600" :src="img" />
-              </v-list-item>
-            </v-list>
-          </v-card-text>
-        </v-card>
-      </h5>
+      <v-row class="justify-center text-center pb-2">
+        <h5 class="my-4">
+          <v-card v-show="isFetch">
+            <v-card-text>
+              <v-list v-if="!isFetch"></v-list>
+              <v-list v-else>
+                <v-list-item class="text-title my-4" max-width="600">
+                  {{ responseData.comments }}
+                </v-list-item>
+                <v-list-item>
+                  <v-img max-width="600" :src="responseData.mainRecommand" />
+                </v-list-item>
+                <v-list-item
+                  v-for="img in responseData.recommandList"
+                  :key="img"
+                >
+                  <v-img max-width="600" :src="img" />
+                </v-list-item>
+              </v-list>
+            </v-card-text>
+          </v-card>
+        </h5>
+      </v-row>
     </div>
   </div>
 </template>
 
 <style lang="sass">
-// .v-stepper-header
-//   display: none !important
+.v-stepper-header
+  display: none !important
 </style>
