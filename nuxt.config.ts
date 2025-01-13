@@ -6,8 +6,6 @@ const siteTitle = 'Mystic Match - AI 穿搭服務'
  */
 import vuetify, { transformAssetUrls } from 'vite-plugin-vuetify'
 export default defineNuxtConfig({
-  experimental: { appManifest: false},
-  ssr: false,
   build: {
     transpile: ['vuetify']
   },
@@ -82,9 +80,9 @@ export default defineNuxtConfig({
 
   vite: {
     vue: {
-      // template: {
-      //   transformAssetUrls
-      // }
+      template: {
+        transformAssetUrls
+      }
     }
   },
 
