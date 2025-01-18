@@ -7,10 +7,10 @@
           </NuxtLink>
           
         </div>
-        <Switch class="flex"/>
+        <!-- <Switch class="flex"/> -->
       </nav>
 
-      <MobileMenu class="hidden mobile-menu" />
+      <!-- <MobileMenu class="hidden mobile-menu" /> -->
 
     </header>
   </template>
@@ -23,6 +23,7 @@
       toggleMobileMenu(){
         // Toggle mobile menu
         document.querySelector('.mobile-menu').classList.toggle('hidden')
+        
       }
     }
   }

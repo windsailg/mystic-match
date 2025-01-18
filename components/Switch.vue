@@ -29,21 +29,23 @@ export default {
     // prefersDark
     //   ? (this.$colorMode.preference = 'dark')
     //   : (this.$colorMode.preference = 'light')
-
     this.$colorMode.preference = 'light'
+    setTimeout(() => {
+      this.$colorMode.preference = 'light'
+    }, 3000);
     // Switch theme button
-    const switcher = document.querySelector('.switcher')
+    // const switcher = document.querySelector('.switcher')
 
-    // Add event listener function
-    switcher.addEventListener('click', () => {
-      if (this.$colorMode.preference == 'dark') {
-        this.$colorMode.preference = 'light'
-        this.enabled = true
-      } else {
-        this.$colorMode.preference = 'dark'
-        this.enabled = false
-      }
-    })
+    // // Add event listener function
+    // switcher.addEventListener('click', () => {
+    //   if (this.$colorMode.preference == 'dark') {
+    //     this.$colorMode.preference = 'light'
+    //     this.enabled = true
+    //   } else {
+    //     this.$colorMode.preference = 'light'
+    //     this.enabled = true
+    //   }
+    // })
   },
 }
 </script>
